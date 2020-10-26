@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+        <h1>Edit Personal Page</h1>
+        <form action="/personal/<%=personal.id%>?_method=PUT" method="POST">
+          name: String,
+          email: String,
+          address: String,
+          dateOfParty: Date,
+          priceLimit: Number,
+          giftCards: Boolean,
+          favStores: String,
+          hobbies: String,
+          collections: String,
+          favColor: String,
+          favSnack: String,
+          favFoods: String
+          specialRequests: String
+          registryLinks: String
+          wishList: String
+        </form>
+
+<%- include('../partials/footer.ejs') %>

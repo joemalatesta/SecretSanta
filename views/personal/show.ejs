@@ -2,8 +2,21 @@
 <%- include('../partials/nav.ejs') %>
 
         <h1>Personal page</h1>
-       <%=personal. %>'s' party is <%=party.dateOfParty; %>.
-
+       <%=personal.name %>'s page for the party on <%=personal.dateOfParty %>.
+       <%=personal.email%>
+       <%=personal.address%>
+       <%=personal.dateOfParty%>
+       <%=personal.priceLimit%>
+       <%=personal.giftCards%>
+       <%=personal.favStores%>
+       <%=personal.hobbies%>
+       <%=personal.collections%>
+       <%=personal.favColor%>
+       <%=personal.favSnack%>
+       <%=personal.favFoods%>
+       <%=personal.specialRequests%>
+       <%=personal.registryLinks%>
+       <%=personal.wishList%>
         <nav>
             <a href="/parties"><button type="button" name="button">Back to Parties Index</button></a>
             <form action="/parties/<%=party.id; %>?_method=DELETE" method="POST">

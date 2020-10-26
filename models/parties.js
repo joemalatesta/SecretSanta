@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const partySchema = Schema({
-  partyIsFor: String,
+  locOfParty: String,
   dateOfParty: Date,
   guestList: [{
     name: String,
-    email: {type: String, unigue:true}
+    email: String,
   }]
 })
 

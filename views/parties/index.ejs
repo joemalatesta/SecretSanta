@@ -5,9 +5,7 @@
         <ul>
             <% for(let i = 0; i < parties.length; i++){ %>
 				<li>
-				    <a href="/parties/<%=parties[i].id; %>">
-				        <%=parties[i].partyIsFor; %>
-				    </a>
+				    <a href="/parties/<%=parties[i].id; %>"><%=parties[i].locOfParty%> on <%=parties[i].dateOfParty%></a>
 
 
 				</li>

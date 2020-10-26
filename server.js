@@ -3,14 +3,14 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
 require('dotenv').config()
-
+const bodyParser = require('body-parser')
 const app = express()
 
 const PORT = process.env.PORT
 const mongodbURI = process.env.MONGODBURI
 
 app.use(express.urlencoded({extended:true}));
-
+app.use(bodyParser.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'))
@@ -23,6 +23,7 @@ app.use(
   })
 )
 
+mongoose.set('useCreateIndex', true)
 mongoose.connect(mongodbURI, {
  useFindAndModify: false,
  useNewUrlParser: true,
@@ -31,7 +32,8 @@ mongoose.connect(mongodbURI, {
  console.log('Database 2 of 2')
 })
 
-
+const personalController = require('./controllers/personal.js')
+app.use('/personal', personalController)
 
 const partiesController = require('./controllers/parties.js')
 app.use('/parties', partiesController)

@@ -3,8 +3,8 @@
 
         <h1>Edit Party Page</h1>
         <form action="/parties/<%=party.id%>?_method=PUT" method="POST">
-          Location of Party: <input type="text" name="locOfParty" />
-          Date of Party: <input type="datetime-local" name="dateOfParty" /> 
+          Guest: <input type="text" name="guestList[0]" />
+          Guest Email: <input type="text" name="guestList[1]" />
             <input type="submit" name="" value="Submit Changes"/>
         </form>
 

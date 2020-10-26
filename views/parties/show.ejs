@@ -2,12 +2,21 @@
 <%- include('../partials/nav.ejs') %>
 
         <h1>Party show page</h1>
-       <%=party.partyIsFor; %>'s' party is <%=party.dateOfParty; %>.
+       <%=party.locOfParty %>'s' party is <%=party.dateOfParty; %>.
+       The Guests invited to partcipate are:
+       <ul>
+           <% for(let i = 0; i < party.length; i++){ %>
+      <li>
+          <a href="/parties/<%=party.id; %>"><%=party.guestList.name%> Email is <%=parties[i].guestList.email%></a>
+      </li>
+           <% } %>
+       </ul>
 
         <nav>
+            <a href="/parties/<%=party.id; %>/addGuests"><button type="button" name="button">Add Guests</button></a>
             <a href="/parties"><button type="button" name="button">Back to Parties Index</button></a>
             <form action="/parties/<%=party.id; %>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE"/>
+                <button type="button" name="button"><input type="submit" value="DELETE"/></button>
             </form>
             <a href="/parties/<%=party.id; %>/edit"><button type="button" name="button">Edit</button></a>
         </nav>

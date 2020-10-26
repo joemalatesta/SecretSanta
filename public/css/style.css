@@ -1,4 +1,30 @@
 body {
-  background-color: green
-  
+  background-color: green;
+  background: url(../images/blue-snow-back.jpg);
+  color: yellow;
+  font-style: bold;
+  font-weight: 900;
+  text-align: center;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+a:link {
+  color: #ffab47;
+}
+a:visited {
+  color:#32e6e6;
+}
+a:active {
+  color:#336666;
+}
+button {
+  background: green;
+  color: blue;
+
 }

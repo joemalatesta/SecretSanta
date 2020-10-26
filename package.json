@@ -1,0 +1,30 @@
+{
+  "name": "secretsanta",
+  "version": "1.0.0",
+  "description": "Secret Santa App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joemalatesta/SecretSanta.git"
+  },
+  "author": "Joe Malatesta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joemalatesta/SecretSanta/issues"
+  },
+  "homepage": "https://github.com/joemalatesta/SecretSanta#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.10",
+    "nodemailer": "^6.4.14"
+  }
+}

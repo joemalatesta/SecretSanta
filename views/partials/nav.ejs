@@ -1,0 +1,12 @@
+<nav>
+    <a href="/parties">Parties</a> |
+    <a href="/parties/new">Create a new Party</a> |
+    <% if (currentUser) { %>
+    Welcome <%= currentUser.username %><form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out"/>
+      </form>
+    <% } else { %>
+      <button type="button" name="button"><a href="/users/new">Sign Up</a></button>
+      <button type="button" name="button"><a href="/sessions/new">Log In</a></button>
+    <% } %>
+</nav>

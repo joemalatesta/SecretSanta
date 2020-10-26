@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+        <h1>Parties index page</h1>
+        <ul>
+            <% for(let i = 0; i < parties.length; i++){ %>
+				<li>
+				    <a href="/parties/<%=parties[i].id; %>">
+				        <%=parties[i].partyIsFor; %>
+				    </a>
+
+
+				</li>
+            <% } %>
+        </ul>
+        <nav>
+		    <a href="/parties/new">Create a New Party</a>
+		</nav>
+
+<%- include('../partials/footer.ejs') %>

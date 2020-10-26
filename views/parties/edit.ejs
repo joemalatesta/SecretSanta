@@ -3,15 +3,14 @@
 
         <h1>Edit Party Page</h1>
         <form action="/parties/<%=party.id%>?_method=PUT" method="POST">
-    		Name: <input type="text" name="partyIsFor" value="<%=party.partyIsFor%>"/><br/>
-    		Date Of Party: <input type="text" name="dateOfParty" value="<%=party.dateOfParty%>"/><br/>
+    		Name: <input type="text" name="partyIsFor" value="<%=party.partyIsFor%>"/>
+    		Date Of Party: <input type="text" name="dateOfParty" value="<%=party.dateOfParty%>"/>
     		Admin
             <input type="checkbox" name="admin"
                 <% if(party.admin === true){ %>
                     checked
                 <% } %>
             />
-            <br/>
             <input type="submit" name="" value="Submit Changes"/>
         </form>
 

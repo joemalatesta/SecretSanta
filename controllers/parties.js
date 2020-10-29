@@ -72,7 +72,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', isAuthenticated, (req, res) => {
   Party.findById(req.params.id, (err, foundModel) => {
 		foundModel.guestList.push(req.body)
-		// console.log(foundModel)
+	 	//console.log(foundModel)
 		foundModel.save(      (err, savedModel) => {
 			res.redirect('/parties')
 		})

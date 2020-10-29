@@ -3,11 +3,11 @@
 
         <h1>Party show page</h1>
        <%=party.locOfParty %>'s' party is <%=party.dateOfParty; %>.
-       The Guests invited to partcipate are:
+      <p> The Guests invited to partcipate are:</p>
        <ul>
-           <% for(let i = 0; i < party.length; i++){ %>
+           <% for(let i = 0; i < party.guestList.length; i++){ %>
       <li>
-          <a href="/parties/<%=party.id; %>"><%=party.guestList.name%> Email is <%=parties[i].guestList.email%></a>
+            <%= party.guestList[i].name%>  :  <%= party.guestList[i].email%>
       </li>
            <% } %>
        </ul>

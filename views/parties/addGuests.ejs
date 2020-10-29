@@ -3,9 +3,10 @@
 
         <h1>Edit Party Page</h1>
         <form action="/parties/<%=party.id%>?_method=PUT" method="POST">
-          Guest: <input type="text" name="guestList[0]" />
-          Guest Email: <input type="text" name="guestList[1]" />
+          Guest: <input type="text" name="name" />
+          Guest Email: <input type="text" name="email"/>
             <input type="submit" name="" value="Submit Changes"/>
         </form>
+        <a href="/parties"><button type="button" name="button">Parties</button></a>
 
 <%- include('../partials/footer.ejs') %>

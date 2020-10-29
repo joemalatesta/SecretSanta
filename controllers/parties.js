@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Party = require('../models/parties.js')
-
+const User = require('../models/users.js')
 
 const isAuthenticated = (req, res, next) =>  {
 	if (req.session.currentUser) {
@@ -15,6 +15,7 @@ router.get('/new', (req, res) => {
 	res.render('parties/new.ejs', { currentUser: req.session.currentUser })
 })
 
+
 router.post('/', (req, res) => {
 	Party.create(req.body, (error, createdParty) => {
 		if (error) {
@@ -26,6 +27,8 @@ router.post('/', (req, res) => {
 	 		}
 		})
 })
+
+
 router.get('/', (req, res)=>{
     Party.find({}, (error, allParties)=>{
         res.render('parties/index.ejs', {
@@ -36,7 +39,6 @@ router.get('/', (req, res)=>{
 })
 
 
-
 router.get('/:id', isAuthenticated, (req, res) => {
 		Party.findById(req.params.id, (err, foundParty) => {
 			res.render('parties/show.ejs', {
@@ -45,6 +47,7 @@ router.get('/:id', isAuthenticated, (req, res) => {
 			})
 		})
 })
+
 
 router.get('/:id/addGuests', (req, res) => {
   Party.findById(req.params.id, (err, foundParty) => {
@@ -67,11 +70,12 @@ router.get('/:id/edit', (req, res) => {
 
 
 router.put('/:id', isAuthenticated, (req, res) => {
-  Party.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedModel) => {
-		console.log(req.body)
-		console.log(err)
-    res.redirect('/parties')
-
+  Party.findById(req.params.id, (err, foundModel) => {
+		foundModel.guestList.push(req.body)
+		// console.log(foundModel)
+		foundModel.save(      (err, savedModel) => {
+			res.redirect('/parties')
+		})
   })
 })
 

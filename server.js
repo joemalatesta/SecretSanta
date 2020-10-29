@@ -32,8 +32,6 @@ mongoose.connect(mongodbURI, {
  console.log('Database 2 of 2')
 })
 
-const personalController = require('./controllers/personal.js')
-app.use('/personal', personalController)
 
 const partiesController = require('./controllers/parties.js')
 app.use('/parties', partiesController)

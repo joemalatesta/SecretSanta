@@ -27,10 +27,9 @@ mongoose.set('useCreateIndex', true)
 mongoose.connect(mongodbURI, {
  useFindAndModify: false,
  useNewUrlParser: true,
- useUnifiedTopology: true,
-}, () => {
- console.log('Database 2 of 2')
-})
+ useUnifiedTopology: true}).then(() => {
+ console.log('Database 2 of 2', mongodbURI))
+ .catch(err => console.log(err))
 
 
 const partiesController = require('./controllers/parties.js')

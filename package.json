@@ -1,6 +1,12 @@
 {
   "name": "secretsanta",
   "version": "1.0.0",
+  "scripts": {
+  "start": "node server.js"
+},
+  "engines": {
+   "node": "14.11.0"
+ },
   "description": "Secret Santa App",
   "main": "server.js",
   "scripts": {

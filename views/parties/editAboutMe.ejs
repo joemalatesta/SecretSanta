@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+        <h1>Edit Party Page</h1>
+        <form action="/parties/<%=party.id%>?_method=PUT" method="POST">
+          <p>  My Favorite Stores: <input type="text" name="favStores" /></p>
+          <p>  My Hobbies: <input type="text" name="hobbies" /></p>
+          <p>  My Collections: <input type="text" name="collections" /></p>
+          <p>  My Favorite Color: <input type="text" name="favColor" /></p>
+          <p>  My Favorite Snacks: <input type="text" name="favSnack" /></p>
+          <p>  My Favorite Foods: <input type="text" name="favFoods" /></p>
+          <p>  Wish List: <input type="text" name="wishList" /></p>
+          <p>    <input type="submit" name="" value="Submit Changes"/></p>
+        </form>
+
+<%- include('../partials/footer.ejs') %>
+
+
+
+
+
+ :

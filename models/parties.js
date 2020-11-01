@@ -7,7 +7,15 @@ const partySchema = Schema({
   guestList: [{
     name: String,
     email: String,
-  }]
+  }],
+  giftCards: Boolean,
+  favStores: String,
+  hobbies: String,
+  collections: String,
+  favColor: String,
+  favSnack: String,
+  favFoods: String,
+  wishList: String,
 })
 
 const Party = mongoose.model('Party', partySchema)

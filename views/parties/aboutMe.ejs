@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+        <h1>Parties index page</h1>
+        <ul>
+				  <li>
+            <p>My Favorite Stores: <%=party.favStores%></p>
+            <p>My Hobbies: <%=party.hobbies%></p>
+            <p>My Collectables: <%=party.collections%></p>
+            <p>My Favorite Color: <%=party.favColor%></p>
+            <p>My Favorite Snacks: <%=party.favSnack%></p>
+            <p>My Favorite Foods: <%=party.favFoods%></p>
+            <p>Wish List: <%=party.wishList%></p>
+				  </li>
+        </ul>
+        <nav>
+		        <a href="/parties/new"><button type="button" name="button">Create a New Party</button></a>
+            <a href="/parties/<%=party.id; %>/editAboutMe"><button type="button" name="button">Edit About Me</button></a>
+		    </nav>
+
+
+<%- include('../partials/footer.ejs') %>

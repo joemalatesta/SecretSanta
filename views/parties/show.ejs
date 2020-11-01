@@ -13,12 +13,26 @@
        </ul>
 
         <nav>
+            <a href="/parties/<%=party.id; %>/aboutMe"><button type="button" name="button">About Me</button></a>
             <a href="/parties/<%=party.id; %>/addGuests"><button type="button" name="button">Add Guests</button></a>
+            <a href="/parties/<%=party.id; %>/sendEmail"><button type="button" name="button">Send Emails</button></a>
             <a href="/parties"><button type="button" name="button">Back to Parties Index</button></a>
+            <a href="/parties/<%=party.id; %>/edit"><button type="button" name="button">Edit</button></a>
             <form action="/parties/<%=party.id; %>?_method=DELETE" method="POST">
                 <button type="button" name="button"><input type="submit" value="DELETE"/></button>
             </form>
-            <a href="/parties/<%=party.id; %>/edit"><button type="button" name="button">Edit</button></a>
+
         </nav>
+
+
+
+
+
+
+
+
+
+
+
 
 <%- include('../partials/footer.ejs') %>

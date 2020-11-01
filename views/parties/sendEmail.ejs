@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+  <h1>Send Emails Page</h1>
+    <form action="/parties/<%=party.id%>/sendEmail/?_method=PUT" method="POST">
+
+      <ul>
+        <% for(let i = 0; i < party.guestList.length; i++){ %>
+          <li>
+            <%= party.guestList[i].name%>  :  <%= party.guestList[i].email%>
+          </li>
+          <% } %>
+        </ul>
+      <input type="submit" name="" value="Submit Changes"/>
+    </form>
+
+
+<%- include('../partials/footer.ejs') %>

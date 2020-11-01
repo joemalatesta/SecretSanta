@@ -128,12 +128,8 @@ router.get('/:id/aboutMe', (req, res) => {
 })
 
 router.put('/:id', isAuthenticated, (req, res) => {
-  Party.findByIdAndUpdate(req.params.id, req.body, req.params.id.guestList, (err, foundModel) => {
-		// console.log("1" + err)
-		// console.log("2" + req.params.id)
-		// console.log("3" + foundModel)
-		// console.log(req.body)
-		// foundModel.guestList.push(req.body)
+  Party.findByIdAndUpdate(req.params.id, req.body, (err, foundModel) => {
+		foundModel.guestList.push(req.body)
 		foundModel.save(      (err, savedModel) => {
 			res.redirect('/parties')
 		})

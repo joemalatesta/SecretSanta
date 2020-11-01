@@ -14,22 +14,32 @@ sessions.post('/', (req, res) => {
       console.log(err)
       res.send('oops the db had problem')
     } else if (!foundUser){
-      res.send('<a href="/">Sorry, no user found </a>')
+      res.send('<a href="/parties">Sorry, no user found </a>')
     } else {
       if (bcrypt.compareSync(req.body.password, foundUser.password)) {
         req.session.currentUser = foundUser
         res.redirect('/parties')
       } else {
-        res.send('<a href="/"> password does not match </a>')
+        res.send('<a href="/parties"> password does not match </a>')
       }
     }
   })
 })
 
-sessions.delete('/', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/')
+sessions.get('/destroy', (req,res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.log(err)
+    } else {
+    }
   })
+  res.redirect('/parties/login')
 })
+// sessions.get('/destroy', () => {
+//   req.session.destroy(err => {
+//
+//   })
+//   res.redirect('/parties/login')
+// })
 
 module.exports = sessions
